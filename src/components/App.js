@@ -3,6 +3,7 @@ import Homepage from "./Homepage";
 import Question from "./Question";
 import Fullpage from "./Fullpage";
 import Footer from "./Footer";
+import { Container } from "react-bootstrap";
 
 class App extends Component {
   constructor() {
@@ -23,8 +24,10 @@ class App extends Component {
     const { slideType } = this.state;
     return (
       <div>
-        <Fullpage onLeave={this.onLeave} />
-        <Footer slideType={slideType} />
+        <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+          <Fullpage onLeave={this.onLeave} />
+          <Footer slideType={slideType} />
+        </Container>
       </div>
     );
   }

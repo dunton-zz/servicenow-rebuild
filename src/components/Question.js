@@ -6,6 +6,8 @@ import { createMarkup } from "../functions/createMarkup";
 
 const QuestionWrapper = styled.div`
   height: 100%;
+  background: linear-gradient(to right bottom, #fff 0%, #fff 17%, #c0c2c4 100%);
+
   .row {
     height: 100%;
     &.text-right {
@@ -47,10 +49,14 @@ const QuestionWrapper = styled.div`
         &.left {
           position: absolute;
           left: 0;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
         }
         &.right {
           position: absolute;
           right: 0;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
         }
         div {
           width: 80%;
@@ -103,7 +109,7 @@ class Question extends Component {
 
             <div className={calloutClass}>
               <div>
-                <h4>{calloutStat}</h4>
+                <h4 dangerouslySetInnerHTML={createMarkup(calloutStat)} />
                 <p>{calloutText}</p>
               </div>
             </div>

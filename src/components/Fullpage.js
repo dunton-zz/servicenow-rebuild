@@ -3,6 +3,7 @@ import ReactFullpage from "@fullpage/react-fullpage";
 import { data } from "../data";
 import { produceSections } from "../functions/produceSections";
 import { Container } from "react-bootstrap";
+import Homepage from "./Homepage";
 
 class Fullpage extends Component {
   constructor() {
@@ -37,11 +38,10 @@ class Fullpage extends Component {
         anchors={anchors}
         render={({ state, fullpageApi }) => {
           return (
-            <Container fluid>
-              <ReactFullpage.Wrapper>
-                {produceSections(data, text)}
-              </ReactFullpage.Wrapper>
-            </Container>
+            <ReactFullpage.Wrapper>
+              <Homepage />
+              {produceSections(data)}
+            </ReactFullpage.Wrapper>
           );
         }}
       />
