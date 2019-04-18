@@ -2,20 +2,44 @@ import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { vars } from "../_stylingVariables";
+import { createMarkup } from "../functions/createMarkup";
 
 const QuestionWrapper = styled.div`
   height: 100%;
   .row {
     height: 100%;
-
+    &.text-right {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .image-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
     .text {
-      h1 {
-        font-size: 2.43vw;
-        color: ${vars.darkGreen};
-        span {
-          color: ${vars.lightGreen};
+      text-align: left;
+      .top-text {
+        padding: 20px 0 0 60px;
+        h1 {
+          font-size: 2.43vw;
+          color: ${vars.darkGreen};
+          span {
+            color: ${vars.lightGreen};
+          }
+        }
+        p {
+          color: ${vars.darkGrey};
+          font-size: 1.3vw;
+          margin-top: 1vw;
         }
       }
+
       .callout-box {
         background: #293e40;
         width: 40%;
@@ -52,18 +76,31 @@ class Question extends Component {
   constructor(props) {
     super(props);
   }
+
+  generateParagraphs = textArray => {};
   render() {
-    const { title, calloutStat, calloutText, text, textSide } = this.props.data;
+    const {
+      title,
+      calloutStat,
+      calloutText,
+      text,
+      textSide,
+      imageUrl
+    } = this.props.data;
     const { count } = this.props;
     const calloutClass = `callout-box ${textSide}`;
+    const rowClass = `text-${textSide}`;
     return (
       <QuestionWrapper>
-        <Row>
+        <Row className={rowClass}>
           <Col md={7} className="text">
-            <h1>
-              <span>{count + 1}.</span> {title}
-            </h1>
-            {text}
+            <div className="top-text">
+              <h1>
+                <span>{count + 1}.</span> {title}
+              </h1>
+              <div dangerouslySetInnerHTML={createMarkup(text)} />
+            </div>
+
             <div className={calloutClass}>
               <div>
                 <h4>{calloutStat}</h4>
@@ -71,17 +108,8 @@ class Question extends Component {
               </div>
             </div>
           </Col>
-          <Col md={5} className="text">
-            <h1>
-              {count + 1}. {title}
-            </h1>
-            {text}
-            <div className={calloutClass}>
-              <div>
-                <h4>{calloutStat}</h4>
-                <p>{calloutText}</p>
-              </div>
-            </div>
+          <Col md={5} className="image-col">
+            <img src={imageUrl} />
           </Col>
         </Row>
       </QuestionWrapper>
