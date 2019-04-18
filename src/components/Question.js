@@ -3,11 +3,13 @@ import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { vars } from "../_stylingVariables";
 import { createMarkup } from "../functions/createMarkup";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 const QuestionWrapper = styled.div`
   background: linear-gradient(to right bottom, #fff 0%, #fff 17%, #c0c2c4 100%);
-  height: calc(100vh - 60px);
-  margin-top: 60px;
+  height: 100vh;
+  padding-top: 60px;
   .row {
     height: 100%;
     &.text-right {
@@ -73,6 +75,7 @@ const QuestionWrapper = styled.div`
               font-weight: 100;
               vertical-align: top;
               font-size: 4vw;
+              margin-left: 3px;
             }
 
             .dollar {
@@ -99,9 +102,27 @@ const QuestionWrapper = styled.div`
 class Question extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      visible: false,
+      didCountup: false
+    };
   }
 
-  generateParagraphs = textArray => {};
+  checkVisiblity = isVisible => {
+    if (isVisible) {
+      this.setState({
+        visible: true,
+        didCountup: true
+      });
+      return;
+    }
+
+    this.setState({
+      visible: false,
+      didCountup: false
+    });
+    return;
+  };
   render() {
     const {
       title,
@@ -120,14 +141,32 @@ class Question extends Component {
           <Col md={7} className="text">
             <div className="top-text">
               <h1>
-                <span>{count + 1}.</span> {title}
+                <span>{count}.</span> {title}
               </h1>
               <div dangerouslySetInnerHTML={createMarkup(text)} />
             </div>
 
             <div className={calloutClass}>
               <div>
-                <h4 dangerouslySetInnerHTML={createMarkup(calloutStat)} />
+                <VisibilitySensor onChange={this.checkVisiblity}>
+                  <CountUp
+                    start={0}
+                    end={this.state.didCountup ? calloutStat : 0}
+                    duration={1.5}
+                    separator=""
+                    decimals={0}
+                    decimal=""
+                    prefix=""
+                    suffix=""
+                  >
+                    {({ countUpRef }) => (
+                      <h4>
+                        <span ref={countUpRef} />
+                        <span class="percent">%</span>
+                      </h4>
+                    )}
+                  </CountUp>
+                </VisibilitySensor>
                 <p>{calloutText}</p>
               </div>
             </div>
