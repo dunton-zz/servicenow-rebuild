@@ -34,7 +34,7 @@ export const data = [
     key: "question-2",
     textSide: "right",
     imageUrl:
-      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg",
+      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-2.svg",
     type: "question"
   },
   {
@@ -59,7 +59,7 @@ export const data = [
     key: "question-3",
     textSide: "right",
     imageUrl:
-      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg",
+      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-3.svg",
     type: "question"
   },
   {
@@ -73,7 +73,7 @@ export const data = [
     videoPosition: "left",
     ctaText: "How It Works",
     videoUrl:
-      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg",
+      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-4.svg",
     type: "answer"
   },
   {
@@ -86,7 +86,7 @@ export const data = [
     key: "question-4",
     textSide: "right",
     imageUrl:
-      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg",
+      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-5.svg",
     type: "question"
   },
   {
@@ -114,7 +114,7 @@ export const data = [
     key: "question-5",
     textSide: "right",
     imageUrl:
-      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg",
+      "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-6.svg",
     type: "question"
   },
   {
