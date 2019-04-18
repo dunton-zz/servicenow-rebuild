@@ -61,11 +61,28 @@ const QuestionWrapper = styled.div`
         div {
           width: 80%;
           display: block;
-          margin: 0 auto;
+          margin: 10px auto;
           h4 {
             color: #fff;
             font-size: 7vw;
             margin: 0;
+
+            .percent {
+              color: #81b5a1;
+              font-weight: 100;
+              vertical-align: top;
+              font-size: 4vw;
+            }
+
+            .dollar {
+              vertical-align: top;
+              font-size: 4vw;
+            }
+            .milli {
+              font-size: 5vw;
+              margin-top: 1vw;
+              color: ${vars.lightGreen};
+            }
           }
           p {
             font-size: 1.3vw;

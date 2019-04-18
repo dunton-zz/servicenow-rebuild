@@ -51,7 +51,8 @@ export const data = [
     title: "Turn security into a team sport",
     text:
       "<p>In today’s landscape of escalated cyber risk, every team needs to think security-first. But that’s not easy when security and risk organizations are often siloed from the rest of the enterprise, manually handing off tasks to other departments and delaying threat response.</p><p>A heightened security and risk posture comes with some significant bottom-line benefits. Here’s the first step.</p>",
-    calloutStat: "$4.7 million",
+    calloutStat:
+      "<span class='dollar'>$</span>4.7 <span class='milli'>million</span>",
     calloutText: "Estimated savings driven by increased security efficiency8",
     key: 5,
     textSide: "right",
