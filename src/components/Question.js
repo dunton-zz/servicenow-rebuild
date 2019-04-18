@@ -5,9 +5,9 @@ import { vars } from "../_stylingVariables";
 import { createMarkup } from "../functions/createMarkup";
 
 const QuestionWrapper = styled.div`
-  height: 100%;
   background: linear-gradient(to right bottom, #fff 0%, #fff 17%, #c0c2c4 100%);
-
+  height: calc(100vh - 60px);
+  margin-top: 60px;
   .row {
     height: 100%;
     &.text-right {
@@ -28,6 +28,7 @@ const QuestionWrapper = styled.div`
       text-align: left;
       .top-text {
         padding: 20px 0 0 60px;
+        max-width: 95%;
         h1 {
           font-size: 2.43vw;
           color: ${vars.darkGreen};

@@ -72,3 +72,10 @@ export const data = [
       "https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg"
   }
 ];
+
+export const headerData = {
+  clientName: "Service Now",
+  programTitle: "Work Reimagined",
+  clientLogo:
+    "https://s3.amazonaws.com/prd-us-east-cs-wsj/sites/383/2019/03/servicenow_logo-1.png"
+};

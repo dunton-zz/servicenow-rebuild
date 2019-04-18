@@ -1,7 +1,5 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
-import { vars } from "../_stylingVariables";
 import ScrollToBegin from "./ScrollToBegin";
 import ScrollForMore from "./ScrollForMore";
 import InsightsAndSolution from "./InsightsAndSolution";
