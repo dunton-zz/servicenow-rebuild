@@ -130,11 +130,13 @@ class Question extends Component {
       calloutText,
       text,
       textSide,
-      imageUrl
+      key
     } = this.props.data;
     const { count } = this.props;
     const calloutClass = `callout-box ${textSide}`;
     const rowClass = `text-${textSide}`;
+    const imageUrl = `../svgs/${key}-image.svg`;
+    console.log(this);
     return (
       <QuestionWrapper>
         <Row className={rowClass}>
@@ -153,16 +155,12 @@ class Question extends Component {
                     start={0}
                     end={this.state.didCountup ? calloutStat : 0}
                     duration={1.5}
-                    separator=""
                     decimals={0}
-                    decimal=""
-                    prefix=""
-                    suffix=""
                   >
                     {({ countUpRef }) => (
                       <h4>
                         <span ref={countUpRef} />
-                        <span class="percent">%</span>
+                        <span className="percent">%</span>
                       </h4>
                     )}
                   </CountUp>
@@ -172,7 +170,7 @@ class Question extends Component {
             </div>
           </Col>
           <Col md={5} className="image-col">
-            <img src={imageUrl} />
+            <img src="./svgs/question-1-image.svg" alt={`${key} graphic`} />
           </Col>
         </Row>
       </QuestionWrapper>
