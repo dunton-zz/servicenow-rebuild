@@ -136,7 +136,6 @@ class Question extends Component {
     const calloutClass = `callout-box ${textSide}`;
     const rowClass = `text-${textSide}`;
     const imageUrl = `../svgs/${key}-image.svg`;
-    console.log(this);
     return (
       <QuestionWrapper>
         <Row className={rowClass}>
@@ -170,7 +169,10 @@ class Question extends Component {
             </div>
           </Col>
           <Col md={5} className="image-col">
-            <img src="./svgs/question-1-image.svg" alt={`${key} graphic`} />
+            <img
+              src="https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg"
+              alt={`${key} graphic`}
+            />
           </Col>
         </Row>
       </QuestionWrapper>
