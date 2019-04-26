@@ -33,6 +33,9 @@ const QuestionWrapper = styled.div`
         max-width: 95%;
         h1 {
           font-size: 2.43vw;
+          font-family: century-gothic, sans-serif;
+          font-weight: 700;
+          font-style: normal;
           color: ${vars.darkGreen};
           span {
             color: ${vars.lightGreen};
@@ -42,6 +45,9 @@ const QuestionWrapper = styled.div`
           color: ${vars.darkGrey};
           font-size: 1.3vw;
           margin-top: 1vw;
+          font-family: lato, sans-serif;
+          font-weight: 300;
+          font-style: normal;
         }
       }
 
@@ -69,6 +75,9 @@ const QuestionWrapper = styled.div`
             color: #fff;
             font-size: 7vw;
             margin: 0;
+            font-family: century-gothic, sans-serif;
+            font-weight: 700;
+            font-style: normal;
 
             .percent {
               color: #81b5a1;
@@ -92,6 +101,9 @@ const QuestionWrapper = styled.div`
             font-size: 1.3vw;
             color: ${vars.grey};
             margin: 0;
+            font-family: lato, sans-serif;
+            font-weight: 300;
+            font-style: normal;
           }
         }
       }

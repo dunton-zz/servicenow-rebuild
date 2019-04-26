@@ -15,14 +15,21 @@ const HomepageWrapper = styled.div`
     max-width: 80%;
     h1 {
       font-size: 8vw;
+      font-family: century-gothic, sans-serif;
+      font-weight: 700;
     }
     h4 {
       font-size: 2.3vw;
       max-width: 60%;
+      font-family: century-gothic, sans-serif;
+      font-weight: 300;
     }
     p {
       font-size: 1.3vw;
       max-width: 60%;
+      font-family: lato, sans-serif;
+      font-weight: 300;
+      font-style: normal;
     }
   }
   .main-graphic {

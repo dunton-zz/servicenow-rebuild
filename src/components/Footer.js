@@ -43,23 +43,42 @@ const PaginationDotsWrapper = styled.div`
 
 const Footer = props => {
   let content;
-  if (props.slideType === "homepage") {
-    content = <ScrollToBegin />;
-  } else {
-    content = (
-      <div>
-        <ScrollForMore />
-        <InsightsAndSolution />
-        <PaginationDotsWrapper>
-          <Dot slidePosition={props.slidePosition} dotNumber={1} />
-          <Dot slidePosition={props.slidePosition} dotNumber={2} />
-          <Dot slidePosition={props.slidePosition} dotNumber={3} />
-          <Dot slidePosition={props.slidePosition} dotNumber={4} />
-          <Dot slidePosition={props.slidePosition} dotNumber={5} />
-          <Dot slidePosition={props.slidePosition} dotNumber={6} />
-        </PaginationDotsWrapper>
-      </div>
-    );
+  const { slideType } = props;
+  console.log(slideType);
+  switch (slideType) {
+    case "homepage":
+      content = <ScrollToBegin />;
+      break;
+    case "answer":
+      content = (
+        <div>
+          <InsightsAndSolution />
+          <PaginationDotsWrapper>
+            <Dot slidePosition={props.slidePosition} dotNumber={1} />
+            <Dot slidePosition={props.slidePosition} dotNumber={2} />
+            <Dot slidePosition={props.slidePosition} dotNumber={3} />
+            <Dot slidePosition={props.slidePosition} dotNumber={4} />
+            <Dot slidePosition={props.slidePosition} dotNumber={5} />
+            <Dot slidePosition={props.slidePosition} dotNumber={6} />
+          </PaginationDotsWrapper>
+        </div>
+      );
+      break;
+    default:
+      content = (
+        <div>
+          <ScrollForMore />
+          <InsightsAndSolution />
+          <PaginationDotsWrapper>
+            <Dot slidePosition={props.slidePosition} dotNumber={1} />
+            <Dot slidePosition={props.slidePosition} dotNumber={2} />
+            <Dot slidePosition={props.slidePosition} dotNumber={3} />
+            <Dot slidePosition={props.slidePosition} dotNumber={4} />
+            <Dot slidePosition={props.slidePosition} dotNumber={5} />
+            <Dot slidePosition={props.slidePosition} dotNumber={6} />
+          </PaginationDotsWrapper>
+        </div>
+      );
   }
 
   return <FooterWrapper>{content}</FooterWrapper>;

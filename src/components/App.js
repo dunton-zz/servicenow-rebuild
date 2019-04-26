@@ -14,12 +14,36 @@ class App extends Component {
     this.state = {
       slidePosition: null,
       slideType: "homepage",
-      whatsThis: false
+      whatsThis: false,
+      displayType: "desktop"
     };
   }
 
+  determineScreensize = () => {
+    const displayType = window.innerWidth > 767 ? "desktop" : "mobile";
+    this.setState({
+      displayType
+    });
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", () => {
+      this.determineScreensize();
+    });
+  }
+
+  determineQuestionOrAnswer = index => {
+    if (index % 2 === 0) {
+      return "answer";
+    } else if (index) {
+      return "question";
+    }
+
+    return "homepage";
+  };
+
   onLeave = (origin, destination, direction) => {
-    let slideType = destination.index ? "question" : "homepage";
+    let slideType = this.determineQuestionOrAnswer(destination.index);
     this.setState({
       slidePosition: destination.index,
       slideType
@@ -33,9 +57,14 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state);
-    const { slideType, whatsThis, slidePosition } = this.state;
+    const { slideType, whatsThis, slidePosition, displayType } = this.state;
     const { clientLogo, programTitle } = getHeaderData(headerData);
+    const show =
+      displayType === "desktop" ? (
+        <Fullpage onLeave={this.onLeave} />
+      ) : (
+        <div className="mobile" />
+      );
     return (
       <div>
         <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
@@ -45,7 +74,7 @@ class App extends Component {
             clientLogo={clientLogo}
             programTitle={programTitle}
           />
-          <Fullpage onLeave={this.onLeave} />
+          {show}
           <Footer slideType={slideType} slidePosition={slidePosition} />
         </Container>
       </div>
