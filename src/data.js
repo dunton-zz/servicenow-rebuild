@@ -3,7 +3,7 @@ export const data = [
     title: "Reimagine your workplace and unlock productivity",
     text:
       "<p>Today’s employees want more than fancy offices and elaborate perks. They want meaning. But too often, they are sidelined by an avalanche of mundane tasks: reams of paperwork, IT troubleshooting and other operational inefficiencies that keep them away from the work they want to do.</p><p>It doesn’t have to be that way. With digital workflows that streamline processes and modernize the employee experience, leaders have the opportunity to empower their employees to do their creative best and focus on more meaningful work.</p>",
-    calloutStat: "40",
+    calloutStat: 40,
     calloutText:
       "Amount of time employees typically spend on mundane, manual tasks vs. value-added work1",
     key: "question-1",
