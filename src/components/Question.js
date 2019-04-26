@@ -136,7 +136,6 @@ class Question extends Component {
     const calloutClass = `callout-box ${textSide}`;
     const rowClass = `text-${textSide}`;
     const imageUrl = `../svgs/${key}-image.svg`;
-    console.log(this);
     return (
       <QuestionWrapper>
         <Row className={rowClass}>

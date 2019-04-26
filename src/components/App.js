@@ -19,8 +19,10 @@ class App extends Component {
   }
 
   onLeave = (origin, destination, direction) => {
+    let slideType = destination.index ? "question" : "homepage";
     this.setState({
-      slidePosition: destination.index
+      slidePosition: destination.index,
+      slideType
     });
   };
 
@@ -32,7 +34,7 @@ class App extends Component {
 
   render() {
     console.log(this.state);
-    const { slideType, whatsThis } = this.state;
+    const { slideType, whatsThis, slidePosition } = this.state;
     const { clientLogo, programTitle } = getHeaderData(headerData);
     return (
       <div>
@@ -44,7 +46,7 @@ class App extends Component {
             programTitle={programTitle}
           />
           <Fullpage onLeave={this.onLeave} />
-          <Footer slideType={slideType} />
+          <Footer slideType={slideType} slidePosition={slidePosition} />
         </Container>
       </div>
     );
