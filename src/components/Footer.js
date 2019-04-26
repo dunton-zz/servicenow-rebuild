@@ -44,7 +44,6 @@ const PaginationDotsWrapper = styled.div`
 const Footer = props => {
   let content;
   const { slideType } = props;
-  console.log(slideType);
   switch (slideType) {
     case "homepage":
       content = <ScrollToBegin />;
