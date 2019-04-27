@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ScrollForMoreWrapper = styled.div`
-  right: 127px;
+  right: 112px;
   bottom: 60px;
   position: absolute;
   p {

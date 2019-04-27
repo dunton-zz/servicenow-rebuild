@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
-import { vars } from "../_stylingVariables";
 
 const HomepageWrapper = styled.div`
   height: 100%;
@@ -30,6 +28,29 @@ const HomepageWrapper = styled.div`
       font-family: lato, sans-serif;
       font-weight: 300;
       font-style: normal;
+    }
+
+    .cta {
+      color: white;
+      margin-top: 20px;
+      margin-left: 0;
+      font-family: century-gothic, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      cursor: pointer;
+
+      div {
+        background: #293e40;
+        margin: 0;
+        padding: 13px 30px;
+        width: 200px;
+        border-radius: 5px;
+
+        &:hover {
+          background: #81b5a1;
+          color: #293e40;
+        }
+      }
     }
   }
   .main-graphic {
@@ -60,12 +81,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        <div className="main-graphic">
-          <img
-            src="https://d885pvmm0z6oe.cloudfront.net/hubs/servicenow_102298/src/img/main-image-1.svg"
-            alt="main-graphic"
-          />
-        </div>
+        <div className="main-graphic" />
       </HomepageWrapper>
     </div>
   );

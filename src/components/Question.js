@@ -135,6 +135,22 @@ class Question extends Component {
     });
     return;
   };
+
+  animateSvg = () => {
+    switch (this.props.questionNumber) {
+      case 1:
+        if (this.state.visible) {
+          console.log("1");
+        }
+        break;
+      case 2:
+        if (this.state.visible) {
+          console.log("2");
+        }
+        break;
+      default:
+    }
+  };
   render() {
     const {
       title,
@@ -148,6 +164,7 @@ class Question extends Component {
     const calloutClass = `callout-box ${textSide}`;
     const rowClass = `text-${textSide}`;
     const imageUrl = `../svgs/${key}-image.svg`;
+    this.animateSvg();
     return (
       <QuestionWrapper>
         <Row className={rowClass}>

@@ -9,7 +9,7 @@ export const produceSections = data => {
       count++;
       return (
         <div className="section" key={obj.key}>
-          <Question data={obj} count={count} />
+          <Question data={obj} count={count} questionNumber={count} />
         </div>
       );
     } else {
